@@ -2557,7 +2557,7 @@ class YAS3FS(LoggingMixIn, Operations):
             if not data.content:
                 logger.info("write awake '%s' '%i' '%i' '%s' no content" % (path, len(new_data), offset, fh))
                 return 0
-            logger.debug("write '%s' '%i' '%i' '%s' '%s' content" % (path, len(new_data), offset, fh, data.content.name.decode('utf-8')))
+            #logger.debug("write '%s' '%i' '%i' '%s' '%s' content" % (path, len(new_data), offset, fh, data.content.name.decode('utf-8')))
             data.content.seek(offset)
             data.content.write(new_data)
             data.set('change', True)

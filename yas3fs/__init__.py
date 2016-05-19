@@ -1285,8 +1285,6 @@ class YAS3FS(LoggingMixIn, Operations):
         logger.debug("check_status")
 
         while self.cache_entries:
-            time.sleep(self.cache_check_interval)
-            continue
 
             num_entries, mem_size, disk_size = self.cache.get_memory_usage()
             s3q = 0 ### Remove duplicate code
@@ -1315,8 +1313,6 @@ class YAS3FS(LoggingMixIn, Operations):
         logger.debug("check_cache_size")
 
         while self.cache_entries:
-            time.sleep(self.cache_check_interval)
-            continue
 
             logger.debug("check_cache_size get_memory_usage")
             num_entries, mem_size, disk_size = self.cache.get_memory_usage()
